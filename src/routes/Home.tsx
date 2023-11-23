@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Compteur from "../Compteur";
+import Compteur from "../components/Compteur";
 
 const Home = () => {
 

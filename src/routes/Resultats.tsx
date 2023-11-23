@@ -1,13 +1,14 @@
 import { useEffect, useState } from "react"
+import { useParams } from 'react-router-dom'
 
-const Resultats = (playerName: string) => {
+const Resultats = () => {
     
     const [allResults, setAllResults] = useState<number[]>([])
-
+    const { playerName } = useParams()
     useEffect(
         () => {
 
-            const localResults: number[] = JSON.parse(localStorage.getItem(playerName)!)
+            const localResults: number[] = JSON.parse(localStorage.getItem(playerName!)!)
             if (localResults.length > 0) {
                 setAllResults(localResults)
             }
