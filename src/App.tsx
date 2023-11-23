@@ -1,32 +1,21 @@
-import { useCallback, useState } from 'react';
 import './App.css'
-import Compteur from './Compteur'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import Home from './routes/Home';
+import Accueil from './routes/Accueil';
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <Accueil />
+  },
+  {
+    path: '/home',
+    element: <Home />
+  }
+])
 
 function App() {
-  let [starttime, setStarttime] = useState(0);
-  let [endtime, setEndtime] = useState(0);
-  let [start, setStart] = useState(false);
-
-  const handleChangeStartTime = (newValue: number) => {
-    setStarttime(newValue)
-  }
-
-  const handleChangeEndTime = (newValue: number) => {
-    setEndtime(newValue)
-  }
-
-  const handleChangeStart = (newValue: boolean) => {
-    setStart(newValue)
-  }
-
-  return (
-    <>
-      <div>
-        <Compteur startOn={start} onChangeStartTime={handleChangeStartTime} onChangeEndTime={handleChangeEndTime} onChangeStart={handleChangeStart} />
-        
-      </div>
-    </>
-  )
+  return <RouterProvider router={router} />
 }
 
 export default App

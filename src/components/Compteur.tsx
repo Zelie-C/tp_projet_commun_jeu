@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { useCallback } from "react";
 
 const Compteur = (props:{
