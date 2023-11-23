@@ -18,14 +18,14 @@ const Compteur = (props:{
             props.onChangeStart(false);
             props.onChangeEndTime(Date.now());
         }
-    },[]);
+    },[props.startOn]);
 
 
  
 
     return (
         <div>
-            <button onClick={handleClick}>{props.startOn ? 'Stop' : 'Démarrer'}</button>
+            <button onClick={handleClick} className={props.startOn ? "button_start" : "button_update"}>{props.startOn ? 'Stop' : 'Démarrer'}</button>
         </div>
     );
 };
