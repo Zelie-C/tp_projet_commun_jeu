@@ -1,30 +1,32 @@
 import { useState } from "react";
 import { useCallback } from "react";
 
-const Compteur = () => {
+const Compteur = (props:{
+    startOn: boolean, 
+    onChangeStartTime: (newValue: number) => void,
+    onChangeEndTime: (newValue: number) => void,
+    onChangeStart: (newValue: boolean) => void
+}) => {
 
-    let [starttime, setStarttime] = useState(0);
-    let [endtime, setEndtime] = useState(0);
-    let [start, setStart] = useState(false);
-  
+   
+
     const handleClick = useCallback(() => {
-      if(!start) {
-          setStart(true);
-          setStarttime(Date.now());
-      }
-      else if(start) {
-          setStart(false);
-          setEndtime(Date.now())
-      }
-      return start
-  },[start]);
+        if(!props.startOn) {
+            props.onChangeStart(true);
+            props.onChangeStartTime(Date.now());
+        }
+        else if(props.startOn) {
+            props.onChangeStart(false);
+            props.onChangeEndTime(Date.now());
+        }
+    },[]);
 
 
  
 
     return (
         <div>
-            <button onClick={handleClick}>+</button>
+            <button onClick={handleClick}>{props.startOn ? 'Stop' : 'Démarrer'}</button>
         </div>
     );
 };
