@@ -7,7 +7,7 @@ import Resultats from './routes/Resultats';
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <Home />
+    element: <Accueil />
   },
   {
     path: '/home',
