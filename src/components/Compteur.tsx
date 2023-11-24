@@ -25,7 +25,7 @@ const Compteur = (props:{
 
     return (
         <div>
-            <button onClick={handleClick} className={props.startOn ? "button_start" : "button_update"}>{props.startOn ? 'Stop' : 'Démarrer'}</button>
+            <button onClick={handleClick} className="button_start">{props.startOn ? 'Stop' : 'Démarrer'}</button>
         </div>
     );
 };
