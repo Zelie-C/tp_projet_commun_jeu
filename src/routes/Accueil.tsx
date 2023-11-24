@@ -5,14 +5,24 @@ const Accueil = () => {
 
     const [username, setUsername] = useState("");
     const navigate = useNavigate();
+    
     const handleClick = () => {
-        navigate('/Resultats' + username);
+        navigate('/results/' + username);
+    }
+
+    const buttonClick = () => {
+        navigate('/home')
     }
     
 
     const handleChange = (e:React.ChangeEvent<HTMLInputElement>) => {
         setUsername(e.target.value)
     }
+
+    const localData = localStorage.getItem('scores')!;
+
+    console.log(localData)
+
 
     // ACCUEIL AVEC CHOIX PRENOM
     return (
@@ -26,7 +36,7 @@ const Accueil = () => {
                 <label htmlFor="username">Please enter your name :</label>
                 <input type="text" name="username" onChange={handleChange}/>
             </div>
-            <button className="button_start">DÉMARREZ</button>
+            <button className="button_start" onClick={buttonClick}>DÉMARREZ</button>
         </div>
         </>
     )
