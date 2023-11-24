@@ -1,36 +1,28 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import BestScore from "../components/BestScore";
 
 const Accueil = () => {
 
     const [username, setUsername] = useState("");
     const navigate = useNavigate();
-    
-    const handleClick = () => {
-        navigate('/results/' + username);
-    }
+
 
     const buttonClick = () => {
-        navigate('/home')
+        navigate('/home' + username)
     }
-    
+
 
     const handleChange = (e:React.ChangeEvent<HTMLInputElement>) => {
         setUsername(e.target.value)
     }
-
-    const localData = localStorage.getItem('scores')!;
-
-    console.log(localData)
 
 
     // ACCUEIL AVEC CHOIX PRENOM
     return (
         <>
         <div className="container">
-            <div className="best_score" onClick={handleClick}>
-                <p>Best score : </p>
-            </div>
+            <BestScore username={username}/>
             <h1>Blind Game</h1>
             <div className="enter_name">
                 <label htmlFor="username">Please enter your name :</label>

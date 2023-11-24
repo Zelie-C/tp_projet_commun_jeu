@@ -1,8 +1,12 @@
 import { useState } from "react";
 import Compteur from "../components/Compteur";
+import BestScore from "../components/BestScore";
+import { useParams } from "react-router-dom";
 import Temps from "../components/Temps";
 
 const Home = () => {
+  const params = useParams()
+  let [starttime, setStarttime] = useState(0);
 
   let [starttime, setStarttime] = useState(0);
   let [endtime, setEndtime] = useState(0);
@@ -32,11 +36,13 @@ const Home = () => {
         <Temps startOn={start} randomtime={randomtime} onChangeRandomtime={handleChangeRandomtime}/>
       </div>
       <div>
+        <BestScore username={params.username!}/>
+        <h1>Blind Game</h1>
         <Compteur startOn={start} onChangeStartTime={handleChangeStartTime} onChangeEndTime={handleChangeEndTime} onChangeStart={handleChangeStart} />
-        
+
       </div>
     </>
   )
-} 
+}
 
 export default Home
