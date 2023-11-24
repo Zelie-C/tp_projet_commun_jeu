@@ -18,11 +18,11 @@ const Resultats = () => {
         <>
             <div>
                 <h2>Vos résultats</h2>
-                {allResults.length > 0 ? allResults.map(
+                {allResults === undefined || allResults === null ?
+                <div>Vous n'avez pas de score</div> : allResults.map(
                     (score) => (
                        <div className="score-result-page">{score}</div> 
-                    ))
-                : <div>Vous n'avez pas de score</div>}
+                    )) }
             </div>
         </>
     )
