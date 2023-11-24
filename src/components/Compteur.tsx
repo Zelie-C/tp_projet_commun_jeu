@@ -1,13 +1,12 @@
 import { useCallback } from "react";
 
 const Compteur = (props:{
-    startOn: boolean, 
+    startOn: boolean,
     onChangeStartTime: (newValue: number) => void,
     onChangeEndTime: (newValue: number) => void,
-    onChangeStart: (newValue: boolean) => void
+    onChangeStart: (newValue: boolean) => void,
+    result: number,
 }) => {
-
-   
 
     const handleClick = useCallback(() => {
         if(!props.startOn) {
@@ -18,10 +17,9 @@ const Compteur = (props:{
             props.onChangeStart(false);
             props.onChangeEndTime(Date.now());
         }
-    },[props.startOn]);
+    },[props]);
 
-
- 
+    // console.log('Result inside Compteur:', props.result);
 
     return (
         <div>

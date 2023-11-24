@@ -9,7 +9,7 @@ const Accueil = () => {
 
 
     const buttonClick = () => {
-        navigate('/home' + username)
+        navigate('/home/' + username)
     }
 
 
