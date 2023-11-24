@@ -9,10 +9,12 @@ const Home = () => {
 
   const handleChangeStartTime = (newValue: number) => {
     setStarttime(newValue)
+    console.log(starttime)
   }
 
   const handleChangeEndTime = (newValue: number) => {
     setEndtime(newValue)
+    console.log(endtime)
   }
 
   const handleChangeStart = (newValue: boolean) => {
