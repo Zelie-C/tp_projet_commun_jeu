@@ -5,7 +5,6 @@ const Compteur = (props:{
     onChangeStartTime: (newValue: number) => void,
     onChangeEndTime: (newValue: number) => void,
     onChangeStart: (newValue: boolean) => void,
-    result: number,
 }) => {
 
     const handleClick = useCallback(() => {
@@ -19,7 +18,7 @@ const Compteur = (props:{
         }
     },[props]);
 
-    // console.log('Result inside Compteur:', props.result);
+
 
     return (
         <div>

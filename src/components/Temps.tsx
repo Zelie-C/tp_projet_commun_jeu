@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-//let [randomtimeTemps, setRandomtimeTemps] = useState(0);
+
   const Temps = (props:{
     startOn: boolean,
     randomtime: number,
