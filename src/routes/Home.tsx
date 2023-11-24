@@ -7,8 +7,6 @@ import Temps from "../components/Temps";
 const Home = () => {
   const params = useParams()
   let [starttime, setStarttime] = useState(0);
-
-  let [starttime, setStarttime] = useState(0);
   let [endtime, setEndtime] = useState(0);
   let [start, setStart] = useState(false);
   let [randomtime, setRandomtime] = useState(0);
